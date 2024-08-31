@@ -1,10 +1,10 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server"
-import { middleware as i18nMiddleware } from "./lib/i18n"
 const isProtectedRoute = createRouteMatcher(["dashboard/(.*)"])
+import { NextResponse } from "next/server"
 
-export default clerkMiddleware((auth, req, event) => {
+export default clerkMiddleware((auth, req) => {
 	if (isProtectedRoute(req)) auth().protect()
-	return i18nMiddleware(req)
+	return NextResponse.next()
 })
 
 export const config = {
