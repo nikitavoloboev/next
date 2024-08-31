@@ -1,9 +1,9 @@
-import HomeRoute from "@/components/routes/HomeRoute"
+import TonRoute from "@/components/routes/TonRoute"
 
 export default async function Ton() {
 	return (
 		<>
-			<HomeRoute />
+			<TonRoute />
 		</>
 	)
 }
