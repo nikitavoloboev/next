@@ -20,7 +20,11 @@ export function NextjsRouteTable() {
 				</TableHeader>
 				<TableBody>
 					{routes.map((route, index) => (
-						<TableRow key={index} className="cursor-pointer hover:bg-gray-100" onClick={() => router.push(route.route)}>
+						<TableRow
+							key={index}
+							className="cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white hover:text-black dark:hover:text-white"
+							onClick={() => router.push(route.route)}
+						>
 							<TableCell className="font-mono">{route.route}</TableCell>
 							<TableCell>{route.description}</TableCell>
 						</TableRow>
