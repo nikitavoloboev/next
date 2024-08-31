@@ -1,6 +1,6 @@
-# Test Next
+# Next
 
-> Testing Next APIs
+> Testing Next.js APIs
 
 ## Setup
 
