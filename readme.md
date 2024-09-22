@@ -1,7 +1,5 @@
 # Next
 
-> Testing Next.js APIs
-
 ## Setup
 
 ```

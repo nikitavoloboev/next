@@ -1,6 +1,6 @@
-import { getCurrentRoninUser } from "@/lib/auth"
 import { languageTag } from "@/paraglide/runtime"
 import { ClerkProvider } from "@clerk/nextjs"
+import { TonConnectUIProvider } from "@tonconnect/ui-react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Toaster } from "react-hot-toast"
@@ -14,7 +14,6 @@ export default async function RootLayout({
 }: Readonly<{
 	children: React.ReactNode
 }>) {
-	const roninUser = await getCurrentRoninUser()
 	return (
 		<ClerkProvider
 			appearance={{
@@ -25,16 +24,18 @@ export default async function RootLayout({
 				}
 			}}
 		>
-			<html lang={languageTag()}>
-				<head>
-					<link rel="icon" href="/favicon.png" sizes="any" />
-				</head>
+			<TonConnectUIProvider>
+				<html lang={languageTag()}>
+					<head>
+						<link rel="icon" href="/favicon.png" sizes="any" />
+					</head>
 
-				<body className={inter.className}>
-					{children}
-					<Toaster />
-				</body>
-			</html>
+					<body className={inter.className}>
+						{children}
+						<Toaster />
+					</body>
+				</html>
+			</TonConnectUIProvider>
 		</ClerkProvider>
 	)
 }
