@@ -1,6 +1,6 @@
 # Next
 
-> Testing Next components, API
+> Testing Next.js components, API
 
 ## Setup
 
